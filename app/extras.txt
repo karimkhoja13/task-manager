@@ -1,0 +1,27 @@
+// const [todo, setTodo] = useState<string>("");
+  // const [todos, setTodos] = useState<TodoObject[]>([]);
+
+  // useEffect(() => {
+  //   fetch('./dbconfig/todos')
+  //     .then(res => res.json())
+  //     .then(data => setTodos(data))
+  //     .catch(err => console.error(err));
+  // }, []);
+
+  // const addTodo = () => {
+  //   setTodos([{id: uuidv4(), value: todo, done: false}, ...todos]);
+  //   setTodo('');
+  // }
+
+  // const markTodoDone = (id: string) => {
+  //   return () => {
+
+  //     const updatedTodos = todos.map(todo => {
+  //       if (todo.id === id) {
+  //         return { ...todo, done: !todo.done };
+  //       }
+  //       return todo;
+  //     });
+  //     setTodos(updatedTodos);
+  //   };
+  // }
