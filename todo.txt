@@ -1,0 +1,14 @@
+page.tsx
+components
+	AddTodoForm .tsx
+	TodoItem .tsx
+	insertTodo() .tsx
+	markDone() .tsx
+	deleteTodo() .tsx
+	
+
+- proper file structure
+- router.refresh
+- proper variable names
+- types (boolean instead of number for done)
+- find out about key in map()

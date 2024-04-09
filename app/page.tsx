@@ -29,21 +29,6 @@ export default async function page() {
   //   setTodo('');
   // }
 
-  const markTodoDone = async (id: string) => {
-    'use server';
-
-    console.log('marked done');
-    return () => {
-      // const updatedTodos = todos.map(todo => {
-      //   if (todo.id === id) {
-      //     return { ...todos, done: !todo.done };
-      //   }
-      //   return todo;
-      // });
-      // setTodos(updatedTodos);
-    };
-  };
-
   return (
     <>
       <header>
@@ -53,7 +38,8 @@ export default async function page() {
         <div>
           <InsertForm />
           <ul className='mt-5'>
-            {todos.map((todo) => (
+            {todos.map((todo) => ( // ANOTHER COMPONENT NEEDED
+            
               <TodoItem
               key={todo.id}
               id={todo.id} // Pass individual properties as props
