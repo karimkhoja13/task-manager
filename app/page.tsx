@@ -8,7 +8,7 @@ import { eq } from 'drizzle-orm';
 import TodoList from './components/TodoItem';
 import { useCallback } from 'react';
 import TodoItem from './components/TodoItem';
-import { insertTodo } from './components/insert';
+import InsertForm from './components/InsertForm';
 
 export default async function page() {
   const todos: Todo[] = await db.select().from(tasklist);
@@ -51,18 +51,7 @@ export default async function page() {
       </header>
       <main className='p-4'>
         <div>
-          <input
-            type='text'
-            className='text-lg mx-2 text-white border-2 rounded'
-            placeholder='Enter your to-do'
-            // onChange={(e) => setTodo(e.target.value)} - FIND OUT WHY TO USE THIS
-            // value={'1'}
-          />
-          <button className='border-2 p-1 rounded'
-            // onClick={() => insertTodo('testing')}
-            >
-            Add Todo
-          </button>
+          <InsertForm />
           <ul className='mt-5'>
             {todos.map((todo) => (
               <TodoItem

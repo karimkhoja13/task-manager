@@ -21,6 +21,5 @@ export async function updateDone(id, done) {
       .set({ done: 1 })
       .where(eq(tasklist.id, id));
     }
-    //   console.log(updatedTodo);
       return updatedTodo;
 }

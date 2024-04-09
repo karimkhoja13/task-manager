@@ -5,6 +5,7 @@ import { tasklist } from 'db/schema';
 import { eq } from 'drizzle-orm';
 import React from 'react';
 import { updateDone } from './markDone';
+import { deleteTodo } from './deleteTodo';
 
 export default function TodoItem(props: Todo) {
   // const [todo, setTodo] = useState<string>("");
@@ -82,8 +83,12 @@ export default function TodoItem(props: Todo) {
   // }
 
   // console.log(markTodoDone);
+  
   const handleOnClick = async () => {
     await updateDone(props.id, props.done);
+  };
+  const handleButtonClick = async () => {
+    await deleteTodo(props.id);
   };
 
   return (
@@ -94,11 +99,12 @@ export default function TodoItem(props: Todo) {
         props.done ? 'line-through' : 'no-underline'
       } `}
     >
-      <input
-        type='checkbox'
-        className='mx-2 py-1 checkbox checkbox-primary p-3'
-      />
       {props.task}
+      <button
+        className='border-2 p-1 rounded text-xs'
+        onClick={handleButtonClick}
+      >Delete from list
+      </button>
     </li>
   );
 }
